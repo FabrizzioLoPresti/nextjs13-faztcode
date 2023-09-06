@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { notFound } from 'next/navigation'
 import { type Post } from "@/types/posts"
 
 type Props = {
@@ -13,6 +14,11 @@ const dataFetch = async (id: string) => {
       cache: 'no-cache',
     })
     const post: Post = await res.json()
+
+    if (!post) {
+      notFound()
+    }
+
     return post
   } catch (error) {
     console.error(error)
