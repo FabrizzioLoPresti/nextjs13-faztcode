@@ -1,9 +1,11 @@
+import { addPost } from "@/actions/actions";
+
 type Props = {};
 
 export default function CreatePostPage({}: Props) {
   return (
     <div className="mx-auto max-w-screen-xl h-screen flex justify-center">
-      <form action="" className="flex flex-col gap-4">
+      <form action={addPost} className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <label htmlFor="title">Post Title</label>
           <input

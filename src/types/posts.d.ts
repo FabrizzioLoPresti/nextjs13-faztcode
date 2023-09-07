@@ -1,8 +1,8 @@
 type Post = {
-  id: number
+  id?: number
   title: string
-  body: string
-  userId: number
+  body?: string
+  createdAt?: string
 }
 
 type Posts = Post[]

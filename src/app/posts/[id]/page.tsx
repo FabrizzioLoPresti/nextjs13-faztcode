@@ -1,38 +1,54 @@
-import Link from "next/link"
-import { notFound } from 'next/navigation'
-import { type Post } from "@/types/posts"
+import { Suspense } from "react";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { type Post } from "@/types/posts";
+import Home from "@/app/page";
 
 type Props = {
   params: {
-    id: string
-  }
-}
+    id: string;
+  };
+};
 
 const dataFetch = async (id: string) => {
+  // TODO: Cache queda la version anterior
   try {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-      cache: 'no-cache',
-    })
-    const post: Post = await res.json()
-
-    if (!post) {
-      notFound()
-    }
-
-    return post
+    const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+      cache: 'no-cache'
+    });
+    if (!res.ok) return undefined;
+    const post: Post = await res.json();
+    return post;
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
-}
+};
 
-export default async function PostPage({params: {id}}: Props) {
-  const post = await dataFetch(id)
-  
+export default async function PostPage({ params: { id } }: Props) {
+  const post = await dataFetch(id);
+  if (!post) {
+    return notFound();
+  }
+
   return (
-    <section className="mx-auto max-w-screen-xl">
-      <h2 className="font-bold text-2xl">{post?.title}</h2>
-      <p className="text-gray-500">{post?.body}</p>
-      <Link href="/">Volver</Link>
-    </section>
-  )
+    <div className="mx-auto max-w-screen-xl">
+      <section className="mb-10 pb-5 border-b border-b-slate-600">
+        <h2 className="font-bold text-2xl">{post?.title}</h2>
+        <p className="text-gray-500">{post?.body}</p>
+        <div className="flex flex-col gap-4 w-fit">
+          <Link
+            href={`/edit/${post.id}`}
+            className="bg-amber-500 px-4 py-2 text-white"
+          >
+            Editar
+          </Link>
+          <Link href="/">Volver</Link>
+        </div>
+      </section>
+      <h3 className="font-bold text-2xl">Otras publicaciones</h3>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Home />
+      </Suspense>
+    </div>
+  );
 }
