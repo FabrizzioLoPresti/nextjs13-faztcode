@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+Project Deployed in Vercel: [Posts App](https://nextjs13-faztcode.vercel.app/)
+
 ## Getting Started
 
 First, run the development server:
