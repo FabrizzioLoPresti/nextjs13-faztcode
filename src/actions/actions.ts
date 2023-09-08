@@ -37,7 +37,6 @@ export const addPost = async (formData: FormData, id: number | undefined) => {
   revalidateTag("posts");
   // revalidar posts dynamic
   // types prisma
-  // url api para deploy .env
   // useStatus useRouter useParams
 };
 
