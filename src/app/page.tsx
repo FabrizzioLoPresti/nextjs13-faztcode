@@ -3,7 +3,7 @@ import PostList from "@/components/post-list"
 
 const dataFetch = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_BACKEND_URL}/api/posts`, {
+    const res = await fetch(`/api/posts`, {
       cache: 'no-cache',
       next: {
         tags: ['posts']
