@@ -3,7 +3,7 @@ import PostList from "@/components/post-list"
 
 const dataFetch = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/posts', {
+    const res = await fetch(`${process.env.NEXT_BACKEND_URL}/api/posts`, {
       cache: 'no-cache',
       next: {
         tags: ['posts']
@@ -22,7 +22,13 @@ export default async function Home() {
   return (
     <main className="mx-auto max-w-screen-xl">
       <h1 className="text-center text-4xl py-2">Posts</h1>
-      <PostList posts={posts} />
+      {posts && posts?.length > 0 ? (
+        <PostList posts={posts} />
+      ): (
+        <div>
+          <p>No hay posts creados</p>
+        </div>
+      )}
     </main>
   )
 }

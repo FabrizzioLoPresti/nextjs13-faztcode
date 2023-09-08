@@ -8,7 +8,6 @@ type Params = {
   };
 };
 
-// TODO: Cache queda la version anterior
 export const GET = async (request: Request, { params: { id } }: Params) => {
   try {
     const { searchParams } = new URL(request.url);

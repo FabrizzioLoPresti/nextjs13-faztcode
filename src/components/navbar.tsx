@@ -6,7 +6,7 @@ const Navbar = (props: Props) => {
   return (
     <nav className="px-4 py-6 flex justify-between items-center">
       <div>
-        <p>Logo</p>
+        <p>Nextjs CRUD</p>
       </div>
       
       <div className="space-x-4">
