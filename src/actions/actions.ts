@@ -17,7 +17,7 @@ export const addPost = async (formData: FormData, id: number | undefined) => {
   };
 
   if (id) {
-    await fetch(`${process.env.NEXT_BACKEND_URL}/api/posts/${id}`, {
+    await fetch(`http://localhost:3000/api/posts/${id}`, {
       method: "PUT",
       body: JSON.stringify(newPost),
       headers: {
@@ -25,7 +25,7 @@ export const addPost = async (formData: FormData, id: number | undefined) => {
       },
     });
   } else {
-    await fetch(`${process.env.NEXT_BACKEND_URL}/api/posts`, {
+    await fetch(`http://localhost:3000/api/posts`, {
       method: "POST",
       body: JSON.stringify(newPost),
       headers: {
@@ -43,7 +43,7 @@ export const addPost = async (formData: FormData, id: number | undefined) => {
 
 export const deletePost = async (id: number) => {
   try {
-    const res = await fetch(`${process.env.NEXT_BACKEND_URL}/api/posts/${id}`, {
+    const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
       method: "DELETE",
     });
     if (!res.ok) return undefined;
