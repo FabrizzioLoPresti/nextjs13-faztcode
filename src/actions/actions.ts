@@ -35,9 +35,6 @@ export const addPost = async (formData: FormData, id: number | undefined) => {
   }
 
   revalidateTag("posts");
-  // revalidar posts dynamic
-  // types prisma
-  // useStatus useRouter useParams
 };
 
 export const deletePost = async (id: number) => {
