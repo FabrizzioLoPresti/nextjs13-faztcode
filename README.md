@@ -2,6 +2,28 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Project Deployed in Vercel: [Posts App](https://nextjs13-faztcode.vercel.app/)
 
+Nextjs 13 Project using:
+- Src and App Folder
+- Import Alias (@)
+- ESLint
+- .env.local and .env
+- Google Fonts and TailwindCSS
+- Types from Prisma and PostgreSQL Database
+- Metadata
+- Link and Image Componente
+- Layout and Page Structure
+- Client Routes
+- Dynamic Routes
+- API Routes using Route Handlers API
+- Async GET in page.tsx
+- Params ([id] folder) in page.tsx
+- Suspense React Component
+- Page not-found.tsx, loading.tsx and notFound() Function
+- useRouter(), useParam() and useSearchParams Hooks
+- Revalidate
+- Server Actions
+- Route Groups
+
 ## Getting Started
 
 First, run the development server:
