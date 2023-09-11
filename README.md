@@ -24,6 +24,11 @@ Nextjs 13 Project using:
 - Server Actions
 - Route Groups
 
+### Links Projects
+- [FaztCode - Curso de Nextjs desde Cero (Nextjs 13)](https://www.youtube.com/watch?v=_SPoSMmN3ZU)
+- [FaztCode - Nextjs Prisma CRUD con Typescript (Solo miembros)](https://www.youtube.com/watch?v=8gb7PtmwP2U)
+- [FaztCode - Nextjs y Prisma ORM desde Cero usando Typescript](https://www.youtube.com/watch?v=5k7ZGhL3pI0)
+
 ## Getting Started
 
 First, run the development server:
