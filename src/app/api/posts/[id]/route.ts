@@ -18,6 +18,9 @@ export const GET = async (request: Request, { params: { id } }: Params) => {
         id: Number(id),
       },
     });
+    if(!post) {
+      return NextResponse.json({ message: "Not found" }, { status: 404 });
+    }
     // const data: Post = await post.json();
     return NextResponse.json(post);
   } catch (error) {
